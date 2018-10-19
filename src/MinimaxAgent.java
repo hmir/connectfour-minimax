@@ -3,8 +3,6 @@ import java.util.ArrayList;
 public class MinimaxAgent extends Agent {
     private int depth;
 
-    private char testC;
-
     public MinimaxAgent(Board board, int depth) {
         super(board);
         this.depth = depth;
@@ -50,10 +48,7 @@ public class MinimaxAgent extends Agent {
 
         for(int i = 0; i < successors.size(); i++) {
             incrementCount();
-//            System.out.println(actions.get(i));
-            testC = actions.get(i);
             int val = minValue(successors.get(i), getOtherColor(), 1, Integer.MIN_VALUE, Integer.MAX_VALUE);
-//            System.out.println(testC + " value: " + val);
             if(bestValue < val) {
                 bestValue = val;
                 bestIndex = i;
@@ -69,13 +64,7 @@ public class MinimaxAgent extends Agent {
         int v = Integer.MAX_VALUE;
         for(Board successor : board.getSuccessors(currentColor)) {
             incrementCount();
-            int q = maxValue(successor, oppositeColor(currentColor), depth + 1, alpha, beta);
-            if(depth == 1){
-//                System.out.println("Min value, " + q);
-//                System.out.println(successor);
-//                evalFnm.out.println(successor.accessConsecutiveChips());
-            }
-            v = Math.min(v, q);
+            v = Math.min(v, maxValue(successor, oppositeColor(currentColor), depth + 1, alpha, beta));
             beta = Math.min(v, beta);
 
             if(beta <= alpha) {

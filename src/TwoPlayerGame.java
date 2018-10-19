@@ -1,10 +1,4 @@
-import java.util.Scanner;
-
 public class TwoPlayerGame {
-
-    static int blackCount = 0;
-    static int redCount = 0;
-    static int tieCount = 0;
 
     private Board board;
     private boolean playerOneTurn;
@@ -26,9 +20,6 @@ public class TwoPlayerGame {
     }
 
     public void play() {
-//        System.out.println(board);
-        String player;
-        Scanner scanner = new Scanner(System.in);
         char color;
         while(board.getWinner() == null && !board.isTie()) {
             if(playerOneTurn) {
@@ -71,17 +62,14 @@ public class TwoPlayerGame {
         if(board.isTie()) {
             System.out.println("Tie Game!");
             System.out.println();
-            tieCount++;
         }
         else if(board.getWinner().equals("r")) {
             System.out.println("Red wins!");
             System.out.println();
-            redCount++;
         }
         else {
             System.out.println("Black wins!");
             System.out.println();
-            blackCount++;
         }
 
         gameFinished = true;

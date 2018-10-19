@@ -1,4 +1,3 @@
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -48,7 +47,6 @@ public class Board {
         this();
         this.state = state;
         for(char colr : colors) {
-//            System.out.println("Color being checked " + colr);
             consecutiveChips.put(colr, getConsecutiveChips(colr));
         }
     }
@@ -226,8 +224,6 @@ public class Board {
         }
 
         if(chipCount + emptyCount >= 4) {
-//            System.out.println("row");
-//            System.out.println(r + "," + c + ": " + chipCount);
             return chipCount;
         }
         else {
@@ -254,8 +250,6 @@ public class Board {
         }
 
         if(chipCount + emptyCount >= 4) {
-//            System.out.println("col");
-//            System.out.println(r + "," + c + ": " + chipCount);
             return chipCount;
         }
         else {
@@ -318,8 +312,6 @@ public class Board {
         }
 
         if(chipCount + emptyCount >= 4) {
-//            System.out.println("diagRight");
-//            System.out.println(r + "," + c + ": " + chipCount);
             return chipCount;
         }
         else {
@@ -382,8 +374,6 @@ public class Board {
         }
 
         if(chipCount + emptyCount >= 4) {
-//            System.out.println("diagLeft");
-//            System.out.println(r + "," + c + ": " + chipCount);
             return chipCount;
         }
         else {

@@ -16,7 +16,6 @@ public class OnePlayerGame {
 
     public void play() {
         System.out.println(board);
-        String player;
         Scanner scanner = new Scanner(System.in);
         char color;
         while(board.getWinner() == null && !board.isTie()) {
