@@ -1,4 +1,4 @@
-public class TwoPlayerGame {
+public class TwoAgentGame {
 
     private Board board;
     private boolean playerOneTurn;
@@ -7,7 +7,7 @@ public class TwoPlayerGame {
     private Agent agent1;
     private Agent agent2;
 
-    public TwoPlayerGame(Board board, Agent agent1, Agent agent2) {
+    public TwoAgentGame(Board board, Agent agent1, Agent agent2) {
         this.board = board;
         playerOneTurn = true;
         gameFinished = false;
