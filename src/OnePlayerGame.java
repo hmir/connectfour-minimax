@@ -14,6 +14,32 @@ public class OnePlayerGame {
         this.agent.setColor('b');
     }
 
+    public void makePlayerMove(int column) {
+        if(board.canAdd(column) && playerOneTurn) {
+            board.add(column, agent.getOtherColor());
+            playerOneTurn = !playerOneTurn;
+            System.out.println(board);
+        }
+        else {
+            System.out.println("Invalid input, please try again...");
+        }
+    }
+
+    public void requestAgentMove() {
+        double time = System.nanoTime();
+        char agentAction = agent.getAction();
+        double elapsedTime = System.nanoTime() - time;
+        if (board.canAdd(agentAction) && !playerOneTurn) {
+            board.add(agentAction, agent.getColor());
+            playerOneTurn = !playerOneTurn;
+
+            System.out.println(board);
+            System.out.println("Elapsed time: " + elapsedTime / 1000000000);
+            System.out.println("States Expanded: " + agent.getCount());
+            System.out.println();
+        }
+    }
+
     public void play() {
         System.out.println(board);
         Scanner scanner = new Scanner(System.in);
@@ -65,5 +91,9 @@ public class OnePlayerGame {
 
         gameFinished = true;
 
+    }
+
+    public boolean isPlayerOneTurn() {
+        return playerOneTurn;
     }
 }

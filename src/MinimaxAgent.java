@@ -10,8 +10,8 @@ import java.util.ArrayList;
 public class MinimaxAgent extends Agent {
 
     private int depth; // max depth
-    private final int MAX_BOARD_REWARD = 999999;
-    private final int MIN_BOARD_REWARD = -999999;
+    private final int MAX_BOARD_REWARD = 999999; // maximum value of a board state
+    private final int MIN_BOARD_REWARD = -999999; // minimum value of a board state
 
     // default constructor sets agent's chip color to black
     public MinimaxAgent(Board board, int depth) {
