@@ -19,6 +19,24 @@ public class TwoAgentGame {
         agent2.setColor('b');
     }
 
+    public void requestAgentMove() {
+
+        Agent agent = playerOneTurn ? agent1 : agent2;
+
+        double time = System.nanoTime();
+        char agentAction = agent.getAction();
+        double elapsedTime = System.nanoTime() - time;
+        if(board.canAdd(agentAction)) {
+            board.add(agentAction, agent.getColor());
+            playerOneTurn = !playerOneTurn;
+
+            System.out.println(board);
+            System.out.println("Elapsed time: " + elapsedTime / 1000000000);
+            System.out.println("States Expanded: " + agent.getCount());
+            System.out.println();
+        }
+    }
+
     public void play() {
         char color;
         while(board.getWinner() == null && !board.isTie()) {
@@ -74,5 +92,9 @@ public class TwoAgentGame {
 
         gameFinished = true;
 
+    }
+
+    public boolean isPlayerOneTurn() {
+        return playerOneTurn;
     }
 }
