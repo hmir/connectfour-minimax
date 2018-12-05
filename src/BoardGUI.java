@@ -23,7 +23,7 @@ public class BoardGUI extends Canvas implements MouseListener, MouseMotionListen
 
         // initialize boar and game fields
         board = new Board();
-        game = new OnePlayerGame(board, new MinimaxAgent(board, 7));
+        game = new OnePlayerGame(board, new MinimaxAgent(board, 6));
 
         // set background color
         setBackground(new Color(41, 128, 185));
