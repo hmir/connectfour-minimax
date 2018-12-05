@@ -101,19 +101,19 @@ public class BoardGUI extends Canvas implements MouseListener, MouseMotionListen
 
     // the following methods returning BufferedImage are for accessing the icons for the various chip colors
     private BufferedImage redChip() throws IOException {
-        return ImageIO.read(new File("res/red.png"));
+        return ImageIO.read(getClass().getResourceAsStream("red.png"));
     }
 
     private BufferedImage blackChip() throws IOException {
-        return ImageIO.read(new File("res/black.png"));
+        return ImageIO.read(getClass().getResourceAsStream("black.png"));
     }
 
     private BufferedImage whiteChip() throws IOException {
-        return ImageIO.read(new File("res/white.png"));
+        return ImageIO.read(getClass().getResourceAsStream("white.png"));
     }
 
     private BufferedImage yellowChip() throws IOException {
-        return ImageIO.read(new File("res/yellow.png"));
+        return ImageIO.read(getClass().getResourceAsStream("yellow.png"));
     }
 
     public void update(Graphics g) {
