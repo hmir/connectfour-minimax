@@ -1,0 +1,1 @@
+A GUI-based Connect Four game played against a minimax agent using alpha-beta pruning. To play download and run ConnectFour.jar
